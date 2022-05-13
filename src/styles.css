@@ -1,0 +1,125 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.slides-container {
+  margin: 0 auto;
+
+  max-width: 690px;
+  position: relative;
+  /* color: white; */
+}
+img {
+  vertical-align: middle;
+  height: 40%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.text {
+  color: #f2f2f2;
+  background-color: rgba(236, 59, 95, 0.9);
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: auto;
+
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+.mySlides {
+  display: none;
+}
+.prev,
+.next {
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  display: inline-block;
+  font-weight: bolder;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover,
+.prev:active,
+.next:active {
+  background-color: black;
+  opacity: 0.8;
+}
+.dots-container {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgb(158, 157, 157);
+  margin-right: 5px;
+  cursor: pointer;
+}
+.active,
+.dot:hover {
+  background-color: #424242;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  margin: 20px auto;
+  width: 780px;
+  background-color: black;
+  /* margin: 20px 10px; */
+  padding: 40px 20px;
+  box-shadow: 2px 2px 2px 2px solid black;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+  .container {
+    margin: 50px auto;
+  }
+}

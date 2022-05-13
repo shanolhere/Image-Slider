@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Slider</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="slides-container" class="slides-container">
+        <div class="mySlides fade">
+          <img
+            src="https://images.unsplash.com/photo-1651007911009-2dd8f3bc0232?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="slides-1"
+          />
+          <div class="text">Fuju Mountains</div>
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="https://images.unsplash.com/photo-1651091299187-5122cedf1a24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ0fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="slides-2"
+          />
+          <div class="text">Flower for you</div>
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="https://images.unsplash.com/photo-1648073141651-c61c052d9079?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYzfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="slides-1"
+          />
+          <div class="text">Alaska hills</div>
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="https://images.unsplash.com/photo-1583081205988-853ce245e058?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY1fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="slides-1"
+          />
+          <div class="text">Baby Shark (du-du-du)</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)"><</a>
+        <a class="next" onclick="plusSlides(1)">></a>
+      </div>
+      <br />
+
+      <div style="text-align: center;" class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
